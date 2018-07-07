@@ -5,6 +5,15 @@
  */
 package daily.report;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 
 /**
@@ -739,6 +748,11 @@ public class DailyReportFrame extends javax.swing.JFrame {
         });
 
         saveExcelFile.setText("Save Excel File");
+        saveExcelFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveExcelFileActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -911,6 +925,50 @@ public class DailyReportFrame extends javax.swing.JFrame {
     private void closingCashChecktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closingCashChecktActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_closingCashChecktActionPerformed
+
+    private void saveExcelFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveExcelFileActionPerformed
+        FileWriter fileWriter = null;
+        try {
+            // TODO add your handling code here:
+            String fileHeader = "IN,Daily,OUT,Daily";
+            String newLine = "\n";
+            String comma = ",";
+            
+            DateFormat dateFormat = new SimpleDateFormat("MMM-dd-yyyy");
+            Date date = new Date();
+            String filename = dateFormat.format(date);
+            System.out.println(filename+".csv");
+            System.out.println(System.getProperty("user.dir"));
+            File file = new File(System.getProperty("user.dir")+"\\"+filename.toString()+".csv");
+            if(file.exists()) {
+                file.delete();
+            }
+            fileWriter = new FileWriter(file, true);
+                fileWriter.append(fileHeader);
+                fileWriter.append("Sales,"+salest.getText()+",Deposit,"+depositt.getText());
+                fileWriter.append("Sales Tax,"+salesTaxt.getText()+",Lotto Cashes,"+lottoCashest.getText());
+                fileWriter.append("Other Income,"+otherIncomet.getText()+",Scratch Off Cashes,"+scratchOffCashest.getText());
+                fileWriter.append("Fuel Amount,"+fuelAmountt.getText()+",Credit Card Jobber,"+creditCardJobbert.getText());
+                fileWriter.append("Daily Loan Account Receivable,"+dailyLoanAccountReceivablet.getText()+",Credit Card Non Jobber,"+creditCardNonJobbert.getText());
+                fileWriter.append("Deli+TAX,"+deliTaxt.getText()+",Daily Loan Charge Account,"+dailyLoanChargeAccountt.getText());
+                fileWriter.append("Money Frome Bank,"+moneyFromBankt.getText()+",Food Stamps,"+foodStampst.getText());
+                fileWriter.append("Cash Card Non Jobber,"+cashCardNonJobbert.getText()+",Expenses,"+expensest.getText());
+                fileWriter.append("Cash Card Jobber,"+cashCardJobbert.getText()+",Cash Purchase,"+cashPurchaset.getText());
+                fileWriter.append("Check Cashed Fee,"+checkCashedFeet.getText()+",ATM,"+atmt.getText());
+                fileWriter.append("Money Order,"+moneyOrdert.getText()+",Withdrawal,"+withdrawalt.getText());
+                fileWriter.append("Money Order Fee,"+moneyOrderFeet.getText()+",Closing Cash/Check,"+closingCashCheckt.getText());
+                fileWriter.append("Money Transfer,"+moneyTransfert.getText()+",TOTAL OUT,"+totalOutt.getText());
+                fileWriter.append("Money Transfer Fee,"+moneyTransferFeet.getText()+",OVER/SHORT,"+overShortt.getText());
+                fileWriter.append("Lottery Sales,"+lotterySalest.getText()+", , ");
+                fileWriter.append("Lotto Sales,"+lottoSalest.getText()+", , ");
+                fileWriter.append("Opening Cash/Checks,"+openingCashCheckst.getText()+", , ");
+                fileWriter.append("TOTAL IN,"+totalInt.getText()+", , ");
+                
+                fileWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(DailyReportFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_saveExcelFileActionPerformed
 
     /**
      * @param args the command line arguments
