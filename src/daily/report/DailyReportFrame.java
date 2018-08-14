@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -25,6 +26,36 @@ public class DailyReportFrame extends javax.swing.JFrame {
     /**
      * Creates new form DailyReportFrame
      */
+    double salestt = 0.0;
+    double salesTaxtt = 0.0;
+    double otherIncomett = 0.0;
+    double fuelAmounttt = 0.0;
+    double dailyLoanAccountReceivablett = 0.0;
+    double deliTaxtt = 0.0;
+    double moneyFromBanktt = 0.0;
+    double cashCardNonJobbertt = 0.0;
+    double cashCardJobbertt = 0.0;
+    double checkCashedFeett = 0.0;
+    double moneyOrdertt = 0.0;
+    double moneyOrderFeett = 0.0;
+    double moneyTransfertt = 0.0;
+    double moneyTransferFeett = 0.0;
+    double lotterySalestt = 0.0;
+    double lottoSalestt = 0.0;
+    double openingCashCheckstt = 0.0;
+    
+    double deposittt = 0;
+    double lottoCashestt = 0;
+    double scratchOffCashestt = 0;
+    double creditCardJobbertt = 0;
+    double creditCardNonJobbertt = 0;
+    double dailyLoanChargeAccounttt = 0;
+    double foodStampstt = 0;
+    double expensestt = 0;
+    double cashPurchasett = 0;
+    double atmtt = 0;
+    double withdrawaltt = 0;
+    double closingCashChecktt = 0;
     public DailyReportFrame() {
         initComponents();
     }
@@ -59,6 +90,10 @@ public class DailyReportFrame extends javax.swing.JFrame {
         lottoSales = new javax.swing.JLabel();
         openingCashChecks = new javax.swing.JLabel();
         openingCashChecks2 = new javax.swing.JLabel();
+        regularGas = new javax.swing.JLabel();
+        plusGas = new javax.swing.JLabel();
+        superGas = new javax.swing.JLabel();
+        dieselGas = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         salesTaxt = new javax.swing.JTextField();
@@ -79,6 +114,10 @@ public class DailyReportFrame extends javax.swing.JFrame {
         lottoSalest = new javax.swing.JTextField();
         openingCashCheckst = new javax.swing.JTextField();
         totalInt = new javax.swing.JLabel();
+        regularGast = new javax.swing.JTextField();
+        plusGast = new javax.swing.JTextField();
+        superGast = new javax.swing.JTextField();
+        dieselGast = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         deposit = new javax.swing.JLabel();
@@ -216,6 +255,26 @@ public class DailyReportFrame extends javax.swing.JFrame {
         openingCashChecks2.setText("TOTAL IN");
         openingCashChecks2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        regularGas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        regularGas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        regularGas.setText("Regular");
+        regularGas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        plusGas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        plusGas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        plusGas.setText("Plus");
+        plusGas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        superGas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        superGas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        superGas.setText("Super");
+        superGas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        dieselGas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        dieselGas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dieselGas.setText("Diesel");
+        dieselGas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -239,28 +298,32 @@ public class DailyReportFrame extends javax.swing.JFrame {
             .addComponent(openingCashChecks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(dailyLoanAccountReceivable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(openingCashChecks2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(regularGas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(plusGas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(superGas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(dieselGas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sales, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(salesTax, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(otherIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(fuelAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
                 .addComponent(dailyLoanAccountReceivable, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
                 .addComponent(deliTax, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(moneyFromBank, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cashCardNonJobber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(cashCardJobber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(checkCashedFee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,7 +331,7 @@ public class DailyReportFrame extends javax.swing.JFrame {
                 .addComponent(moneyOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(moneyOrderFee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(moneyTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(moneyTransferFee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,6 +342,14 @@ public class DailyReportFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(openingCashChecks, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(regularGas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(plusGas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(superGas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dieselGas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(openingCashChecks2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -396,6 +467,30 @@ public class DailyReportFrame extends javax.swing.JFrame {
         totalInt.setText("0.00");
         totalInt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        regularGast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regularGastActionPerformed(evt);
+            }
+        });
+
+        plusGast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plusGastActionPerformed(evt);
+            }
+        });
+
+        superGast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                superGastActionPerformed(evt);
+            }
+        });
+
+        dieselGast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dieselGastActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -419,6 +514,10 @@ public class DailyReportFrame extends javax.swing.JFrame {
             .addComponent(lottoSalest)
             .addComponent(openingCashCheckst)
             .addComponent(totalInt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(regularGast)
+            .addComponent(plusGast)
+            .addComponent(superGast)
+            .addComponent(dieselGast)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,8 +558,15 @@ public class DailyReportFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(openingCashCheckst, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(totalInt, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(regularGast, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(plusGast, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(superGast, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dieselGast, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(totalInt, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -782,10 +888,8 @@ public class DailyReportFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(done, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -875,7 +979,8 @@ public class DailyReportFrame extends javax.swing.JFrame {
         
         double overshort = Double.parseDouble(totalout) - Double.parseDouble(totalin);
         String overshortstring = String.valueOf(overshort);
-        overShortt.setText("$"+overshortstring);
+        DecimalFormat df = new DecimalFormat("###.##");
+        overShortt.setText("$"+df.format(overshort));
     }//GEN-LAST:event_doneActionPerformed
 
     private void deposittActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deposittActionPerformed
@@ -945,30 +1050,77 @@ public class DailyReportFrame extends javax.swing.JFrame {
             }
             fileWriter = new FileWriter(file, true);
                 fileWriter.append(fileHeader);
-                fileWriter.append("Sales,"+salest.getText()+",Deposit,"+depositt.getText());
-                fileWriter.append("Sales Tax,"+salesTaxt.getText()+",Lotto Cashes,"+lottoCashest.getText());
-                fileWriter.append("Other Income,"+otherIncomet.getText()+",Scratch Off Cashes,"+scratchOffCashest.getText());
-                fileWriter.append("Fuel Amount,"+fuelAmountt.getText()+",Credit Card Jobber,"+creditCardJobbert.getText());
-                fileWriter.append("Daily Loan Account Receivable,"+dailyLoanAccountReceivablet.getText()+",Credit Card Non Jobber,"+creditCardNonJobbert.getText());
-                fileWriter.append("Deli+TAX,"+deliTaxt.getText()+",Daily Loan Charge Account,"+dailyLoanChargeAccountt.getText());
-                fileWriter.append("Money Frome Bank,"+moneyFromBankt.getText()+",Food Stamps,"+foodStampst.getText());
-                fileWriter.append("Cash Card Non Jobber,"+cashCardNonJobbert.getText()+",Expenses,"+expensest.getText());
-                fileWriter.append("Cash Card Jobber,"+cashCardJobbert.getText()+",Cash Purchase,"+cashPurchaset.getText());
-                fileWriter.append("Check Cashed Fee,"+checkCashedFeet.getText()+",ATM,"+atmt.getText());
-                fileWriter.append("Money Order,"+moneyOrdert.getText()+",Withdrawal,"+withdrawalt.getText());
-                fileWriter.append("Money Order Fee,"+moneyOrderFeet.getText()+",Closing Cash/Check,"+closingCashCheckt.getText());
-                fileWriter.append("Money Transfer,"+moneyTransfert.getText()+",TOTAL OUT,"+totalOutt.getText());
-                fileWriter.append("Money Transfer Fee,"+moneyTransferFeet.getText()+",OVER/SHORT,"+overShortt.getText());
-                fileWriter.append("Lottery Sales,"+lotterySalest.getText()+", , ");
-                fileWriter.append("Lotto Sales,"+lottoSalest.getText()+", , ");
-                fileWriter.append("Opening Cash/Checks,"+openingCashCheckst.getText()+", , ");
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Sales,"+salestt+",Deposit,"+deposittt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Sales Tax,"+salesTaxtt+",Lotto Cashes,"+lottoCashestt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Other Income,"+otherIncomett+",Scratch Off Cashes,"+scratchOffCashestt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Fuel Amount,"+fuelAmounttt+",Credit Card Jobber,"+creditCardJobbertt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Daily Loan Account Receivable,"+dailyLoanAccountReceivablett+",Credit Card Non Jobber,"+creditCardNonJobbertt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Deli+TAX,"+deliTaxtt+",Daily Loan Charge Account,"+dailyLoanChargeAccounttt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Money Frome Bank,"+moneyFromBanktt+",Food Stamps,"+foodStampstt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Cash Card Non Jobber,"+cashCardNonJobbertt+",Expenses,"+expensestt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Cash Card Jobber,"+cashCardJobbertt+",Cash Purchase,"+cashPurchasett);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Check Cashed Fee,"+checkCashedFeett+",ATM,"+atmtt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Money Order,"+moneyOrdertt+",Withdrawal,"+withdrawaltt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Money Order Fee,"+moneyOrderFeett+",Closing Cash/Check,"+closingCashChecktt);
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Money Transfer,"+moneyTransfertt+",TOTAL OUT,"+totalOutt.getText());
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Money Transfer Fee,"+moneyTransferFeett+",OVER/SHORT,"+overShortt.getText());
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Lottery Sales,"+lotterySalestt+", , ");
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Lotto Sales,"+lottoSalestt+", , ");
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Opening Cash/Checks,"+openingCashCheckstt+", , ");
+                fileWriter.append(System.lineSeparator());
                 fileWriter.append("TOTAL IN,"+totalInt.getText()+", , ");
+                
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("GAS");
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Regular,"+regularGast.getText());
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Plus,"+plusGast.getText());
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Super,"+superGast.getText());
+                fileWriter.append(System.lineSeparator());
+                fileWriter.append("Diesel,"+dieselGast.getText());
+                fileWriter.append(System.lineSeparator());
                 
                 fileWriter.close();
         } catch (IOException ex) {
             Logger.getLogger(DailyReportFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_saveExcelFileActionPerformed
+
+    private void regularGastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regularGastActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_regularGastActionPerformed
+
+    private void plusGastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusGastActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plusGastActionPerformed
+
+    private void superGastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_superGastActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_superGastActionPerformed
+
+    private void dieselGastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dieselGastActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dieselGastActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1004,19 +1156,8 @@ public class DailyReportFrame extends javax.swing.JFrame {
             }
         });
     }
-    public double getTotalOut() {
-        double deposittt = 0.0;
-        double lottoCashestt = 0.0;
-        double scratchOffCashestt = 0.0;
-        double creditCardJobbertt = 0.0;
-        double creditCardNonJobbertt = 0.0;
-        double dailyLoanChargeAccounttt = 0.0;
-        double foodStampstt = 0.0;
-        double expensestt = 0.0;
-        double cashPurchasett = 0.0;
-        double atmtt = 0.0;
-        double withdrawaltt = 0.0;
-        double closingCashChecktt = 0.0;
+    public String getTotalOut() {
+        
         
         if(!depositt.getText().isEmpty()){
             deposittt = Double.parseDouble(depositt.getText());
@@ -1057,26 +1198,10 @@ public class DailyReportFrame extends javax.swing.JFrame {
         double totalOut = deposittt + lottoCashestt + scratchOffCashestt + 
                 creditCardJobbertt + creditCardNonJobbertt + dailyLoanChargeAccounttt + 
                 foodStampstt + expensestt + cashPurchasett + atmtt + withdrawaltt + closingCashChecktt;
-        return totalOut;
+        DecimalFormat df = new DecimalFormat("###.##");
+        return df.format(totalOut);
     }
-    public double getTotalIn(){
-        double salestt = 0.0;
-        double salesTaxtt = 0.0;
-        double otherIncomett = 0.0;
-        double fuelAmounttt = 0.0;
-        double dailyLoanAccountReceivablett = 0.0;
-        double deliTaxtt = 0.0;
-        double moneyFromBanktt = 0.0;
-        double cashCardNonJobbertt = 0.0;
-        double cashCardJobbertt = 0.0;
-        double checkCashedFeett = 0.0;
-        double moneyOrdertt = 0.0;
-        double moneyOrderFeett = 0.0;
-        double moneyTransfertt = 0.0;
-        double moneyTransferFeett = 0.0;
-        double lotterySalestt = 0.0;
-        double lottoSalestt = 0.0;
-        double openingCashCheckstt = 0.0;
+    public String getTotalIn(){
         
         if(!salest.getText().isEmpty()){
             salestt = Double.parseDouble(salest.getText());
@@ -1131,23 +1256,20 @@ public class DailyReportFrame extends javax.swing.JFrame {
         }
         
         double totalIn = salestt + salesTaxtt + otherIncomett + fuelAmounttt + dailyLoanAccountReceivablett + deliTaxtt + moneyFromBanktt + cashCardNonJobbertt + cashCardJobbertt + checkCashedFeett + moneyOrdertt + moneyOrderFeett + moneyTransfertt + moneyTransferFeett + lotterySalestt + lottoSalestt + openingCashCheckstt; 
-        
-        return totalIn;
+        DecimalFormat df = new DecimalFormat("###.##");
+        return df.format(totalIn);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel atm;
     private javax.swing.JTextField atmt;
     private javax.swing.JLabel cashCardJobber;
-    private javax.swing.JLabel cashCardJobber1;
     private javax.swing.JTextField cashCardJobbert;
     private javax.swing.JLabel cashCardNonJobber;
-    private javax.swing.JLabel cashCardNonJobber1;
     private javax.swing.JTextField cashCardNonJobbert;
     private javax.swing.JLabel cashPurchase;
     private javax.swing.JTextField cashPurchaset;
     private javax.swing.JLabel checkCashedFee;
-    private javax.swing.JLabel checkCashedFee1;
     private javax.swing.JTextField checkCashedFeet;
     private javax.swing.JLabel closingCashCheck;
     private javax.swing.JTextField closingCashCheckt;
@@ -1156,75 +1278,67 @@ public class DailyReportFrame extends javax.swing.JFrame {
     private javax.swing.JLabel creditCardNonJobber;
     private javax.swing.JTextField creditCardNonJobbert;
     private javax.swing.JLabel dailyLoanAccountReceivable;
-    private javax.swing.JLabel dailyLoanAccountReceivable1;
     private javax.swing.JTextField dailyLoanAccountReceivablet;
     private javax.swing.JLabel dailyLoanChargeAccount;
     private javax.swing.JTextField dailyLoanChargeAccountt;
     private javax.swing.JLabel deliTax;
-    private javax.swing.JLabel deliTax1;
     private javax.swing.JTextField deliTaxt;
     private javax.swing.JLabel deposit;
     private javax.swing.JTextField depositt;
+    private javax.swing.JLabel dieselGas;
+    private javax.swing.JTextField dieselGast;
     private javax.swing.JButton done;
     private javax.swing.JLabel expenses;
     private javax.swing.JTextField expensest;
     private javax.swing.JLabel foodStamps;
     private javax.swing.JTextField foodStampst;
     private javax.swing.JLabel fuelAmount;
-    private javax.swing.JLabel fuelAmount1;
     private javax.swing.JTextField fuelAmountt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel lotterySales;
-    private javax.swing.JLabel lotterySales1;
     private javax.swing.JTextField lotterySalest;
     private javax.swing.JLabel lottoCashes;
     private javax.swing.JTextField lottoCashest;
     private javax.swing.JLabel lottoSales;
-    private javax.swing.JLabel lottoSales1;
     private javax.swing.JTextField lottoSalest;
     private javax.swing.JLabel moneyFromBank;
-    private javax.swing.JLabel moneyFromBank1;
     private javax.swing.JTextField moneyFromBankt;
     private javax.swing.JLabel moneyOrder;
-    private javax.swing.JLabel moneyOrder1;
     private javax.swing.JLabel moneyOrderFee;
-    private javax.swing.JLabel moneyOrderFee1;
     private javax.swing.JTextField moneyOrderFeet;
     private javax.swing.JTextField moneyOrdert;
     private javax.swing.JLabel moneyTransfer;
-    private javax.swing.JLabel moneyTransfer1;
     private javax.swing.JLabel moneyTransferFee;
-    private javax.swing.JLabel moneyTransferFee1;
     private javax.swing.JTextField moneyTransferFeet;
     private javax.swing.JTextField moneyTransfert;
     private javax.swing.JLabel openingCashChecks;
-    private javax.swing.JLabel openingCashChecks1;
     private javax.swing.JLabel openingCashChecks2;
     private javax.swing.JTextField openingCashCheckst;
     private javax.swing.JLabel otherIncome;
-    private javax.swing.JLabel otherIncome1;
     private javax.swing.JTextField otherIncomet;
     private javax.swing.JLabel overShort;
     private javax.swing.JLabel overShortt;
+    private javax.swing.JLabel plusGas;
+    private javax.swing.JTextField plusGast;
+    private javax.swing.JLabel regularGas;
+    private javax.swing.JTextField regularGast;
     private javax.swing.JLabel sales;
-    private javax.swing.JLabel sales1;
     private javax.swing.JLabel salesTax;
-    private javax.swing.JLabel salesTax1;
     private javax.swing.JTextField salesTaxt;
     private javax.swing.JTextField salest;
     private javax.swing.JButton saveExcelFile;
     private javax.swing.JLabel scratchOffCashes;
     private javax.swing.JTextField scratchOffCashest;
+    private javax.swing.JLabel superGas;
+    private javax.swing.JTextField superGast;
     private javax.swing.JLabel totalInt;
     private javax.swing.JLabel totalOut;
     private javax.swing.JLabel totalOutt;
